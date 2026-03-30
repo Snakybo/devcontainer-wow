@@ -40,7 +40,5 @@ fi
 if [ "$DOWNLOAD_FRAMEXML" = "true" ]; then
     echo "Downloading Numy FrameXML annotations..."
 
-    download_zip "https://github.com/NumyAddon/FramexmlAnnotations/archive/refs/heads/${FRAMEXML_VERSION}-mix-into-source.zip" "$INSTALL_ROOT/FrameXML" "Annotations"
-
-	echo "$FRAMEXML_VERSION" > "$INSTALL_ROOT/FrameXML/.flavor"
+    download_zip "https://github.com/NumyAddon/FramexmlAnnotations/archive/refs/heads/${FRAMEXML_VERSION}-mix-into-source.zip" "$INSTALL_ROOT/FrameXML/$FRAMEXML_VERSION" "Annotations"
 fi
