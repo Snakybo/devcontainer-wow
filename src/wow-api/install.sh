@@ -16,29 +16,33 @@ download_zip() {
     target="$2"
 	folder="$3"
 
-	mkdir -p "$target"
-
     tmp_zip="$(mktemp --suffix=.zip)"
     tmp_dir="$(mktemp -d)"
 
+	echo "Download from $url to $tmp_zip"
     wget -q "$url" -O "$tmp_zip"
+
+	echo "Unzip $tmp_zip to $tmp_dir"
     unzip -q "$tmp_zip" -d "$tmp_dir"
     rm "$tmp_zip"
 
     rm -rf "$target"
+	mkdir -p "$target"
 
-    mv "$tmp_dir"/*/"$folder"/*/ "$target"
+	echo "Move from $tmp_dir/*/$folder/*/ to $target"
+    mv "$tmp_dir/*/$folder/*/" "$target"
+
     rmdir "$tmp_dir"
 }
 
 if [ "$DOWNLOAD_WOW_API" = "true" ]; then
-    echo "Downloading Ketho WoW annotations..."
+    echo "Downloading Ketho's WoW annotations..."
 
     download_zip "https://github.com/Ketho/vscode-wow-api/archive/refs/heads/master.zip" "$INSTALL_ROOT/Core" "Annotations/Core"
 fi
 
 if [ "$DOWNLOAD_FRAMEXML" = "true" ]; then
-    echo "Downloading Numy FrameXML annotations..."
+    echo "Downloading Numy's FrameXML annotations..."
 
     download_zip "https://github.com/NumyAddon/FramexmlAnnotations/archive/refs/heads/${FRAMEXML_VERSION}-mix-into-source.zip" "$INSTALL_ROOT/FrameXML/$FRAMEXML_VERSION" "Annotations"
 fi
