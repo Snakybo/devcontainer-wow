@@ -5,8 +5,6 @@ echo "Activating feature 'WoW Lua API'"
 
 INSTALL_ROOT="$_CONTAINER_USER_HOME/Annotations"
 
-mkdir -p "$INSTALL_ROOT"
-
 if ! command -v wget > /dev/null 2>&1 || ! command -v unzip > /dev/null 2>&1; then
     apt-get update
     apt-get install -y --no-install-recommends wget unzip
@@ -17,6 +15,8 @@ download_zip() {
     url="$1"
     target="$2"
 	folder="$3"
+
+	mkdir -p "$target"
 
     tmp_zip="$(mktemp --suffix=.zip)"
     tmp_dir="$(mktemp -d)"
