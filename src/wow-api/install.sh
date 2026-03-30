@@ -7,6 +7,12 @@ INSTALL_ROOT="$_CONTAINER_USER_HOME/Annotations"
 
 mkdir -p "$INSTALL_ROOT"
 
+if ! command -v wget > /dev/null 2>&1 || ! command -v unzip > /dev/null 2>&1; then
+    apt-get update
+    apt-get install -y --no-install-recommends wget unzip
+    rm -rf /var/lib/apt/lists/*
+fi
+
 download_zip() {
     url="$1"
     target="$2"
@@ -15,7 +21,7 @@ download_zip() {
     tmp_zip="$(mktemp --suffix=.zip)"
     tmp_dir="$(mktemp -d)"
 
-    curl -fsSL "$url" -o "$tmp_zip"
+    wget -q "$url" -O "$tmp_zip"
     unzip -q "$tmp_zip" -d "$tmp_dir"
     rm "$tmp_zip"
 
