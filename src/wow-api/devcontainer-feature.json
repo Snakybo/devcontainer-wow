@@ -1,0 +1,21 @@
+{
+	"id": "wow-api",
+	"name": "WoW Lua API",
+	"description": "This Feature downloads Ketho's Lua annotations and Numy's FrameXML annotations",
+	"version": "1.0.0",
+	"options": {
+		"download-wow-api": {
+			"type": "boolean",
+			"default": true,
+			"description": "Download Ketho's Lua annotations"
+		},
+		"download-framexml": {
+			"type": "boolean",
+			"default": true,
+			"description": "Download Numy's FrameXML annotations"
+		}
+	},
+	"installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+	]
+}
