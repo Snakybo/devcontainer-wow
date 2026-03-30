@@ -4,7 +4,7 @@ set -e
 
 source dev-container-features-test-lib
 
-INSTALL_ROOT="$_CONTAINER_USER_HOME/Annotations"
+INSTALL_ROOT="$_REMOTE_USER_HOME/Annotations"
 
 check "Ketho's annotations directory exists" test -d "$INSTALL_ROOT/Core"
 check "Ketho's annotations contain Lua files" test -n "$(find "$INSTALL_ROOT/Core" -name '*.lua' | head -1)"

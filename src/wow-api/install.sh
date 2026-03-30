@@ -3,7 +3,7 @@ set -e
 
 echo "Activating feature 'WoW Lua API'"
 
-INSTALL_ROOT="$_CONTAINER_USER_HOME/Annotations"
+INSTALL_ROOT="$_REMOTE_USER_HOME/Annotations"
 
 if ! command -v wget > /dev/null 2>&1 || ! command -v unzip > /dev/null 2>&1; then
     apt-get update
