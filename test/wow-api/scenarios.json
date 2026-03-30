@@ -1,0 +1,38 @@
+{
+	"all": {
+		"image": "mcr.microsoft.com/devcontainers/base:debian",
+		"features": {
+			"wow-api": {
+				"download-wow-api": true,
+				"download-framexml": true
+			}
+		}
+	},
+	"none": {
+		"image": "mcr.microsoft.com/devcontainers/base:debian",
+		"features": {
+			"wow-api": {
+				"download-wow-api": false,
+				"download-framexml": false
+			}
+		}
+	},
+	"wow-api": {
+		"image": "mcr.microsoft.com/devcontainers/base:debian",
+		"features": {
+			"wow-api": {
+				"download-wow-api": true,
+				"download-framexml": false
+			}
+		}
+	},
+	"framexml": {
+		"image": "mcr.microsoft.com/devcontainers/base:debian",
+		"features": {
+			"wow-api": {
+				"download-wow-api": false,
+				"download-framexml": true
+			}
+		}
+	}
+}
