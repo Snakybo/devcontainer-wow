@@ -10,11 +10,11 @@ INSTALL_ROOT="$_CONTAINER_USER_HOME/Annotations"
 
 mkdir -p "$INSTALL_ROOT"
 
-if [ -z "$DOWNLOAD_WOW_API" ]; then
+if [ "$DOWNLOAD_WOW_API" ]; then
 	echo "Downloading Ketho WoW annotations..."
 
 fi
 
-if [ -z "${DOWNLOAD_FRAMEXML}" ]; then
+if [ "${DOWNLOAD_FRAMEXML}" ]; then
 	echo "Downloading Numy FrameXML annotations..."
 fi
