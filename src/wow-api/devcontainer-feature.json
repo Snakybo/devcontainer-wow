@@ -7,12 +7,29 @@
 		"download-wow-api": {
 			"type": "boolean",
 			"default": true,
-			"description": "Download Ketho's Lua annotations"
+			"description": "Whether to download Ketho's Lua annotations"
 		},
 		"download-framexml": {
 			"type": "boolean",
 			"default": true,
-			"description": "Download Numy's FrameXML annotations"
+			"description": "Whether to download Numy's FrameXML annotations"
+		},
+		"framexml-version": {
+			"type": "string",
+			"enum": [
+				"live",
+				"ptr",
+				"ptr2",
+				"beta",
+				"classic",
+				"classic_ptr",
+				"classic_beta",
+				"classic_anniversary",
+				"classic_era",
+				"classic_era_ptr"
+			],
+			"default": "live",
+			"description": "The FrameXML flavor to download"
 		}
 	},
 	"installsAfter": [
